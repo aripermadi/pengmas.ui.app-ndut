@@ -140,7 +140,7 @@ class _StudyCaseState extends State<StudyCase> {
                   margin:
                       EdgeInsets.only(left: 20, right: 20, top: defaultMargin),
                   child: RaisedButton(
-                    child: Text('Misi Pertama !',
+                    child: Text('Tugas',
                         style: whiteTextFont.copyWith(
                             fontSize: 18, fontWeight: FontWeight.w400)),
                     color: accentColor2,

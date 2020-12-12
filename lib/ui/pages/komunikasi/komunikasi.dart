@@ -144,15 +144,14 @@ class _KomunikasiPageState extends State<KomunikasiPage> {
                                   hintText: 'Tulis jawabannya disini...',
                                 ),
                                 controller: controller,
-                                maxLength: 200,
                               ),
                             ),
-                            Padding(
+                            /*Padding(
                                 padding: const EdgeInsets.all(30),
                                 child: Text(
                                   controller.text,
                                   style: kTitleTextStyle,
-                                )),
+                                )),*/
                           ],
                         ),
                       ]),
