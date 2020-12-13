@@ -8,14 +8,79 @@ class ChoicesQuiz3 extends StatefulWidget {
 }
 
 class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
-  int _rgProgramming = -1;
+  List<String> _hasilCheck = [];
   String _selectedValue;
+  int idTugas;
+  int idUser;
+  String nama;
 
-  final List<RadioGroup> _programmingList = [
-    RadioGroup(index: 1, text: "13. Bermain games di HP."),
-    RadioGroup(index: 2, text: "14. Menonton gossip di TV."),
-    RadioGroup(index: 3, text: "15. Melihat-lihat online shop."),
-    RadioGroup(index: 4, text: "16. Beri contoh lain.."),
+  @override
+  void initState() {
+    super.initState();
+    getId();
+  }
+
+  void getId() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      idTugas = prefs.getInt('idTugas');
+      idUser = prefs.getInt("id");
+      nama = prefs.getString('nama');
+    });
+  }
+
+  void postKebahagiaan() async {
+    String chk = _hasilCheck.toString();
+    String jwb = 'Kuadran IV : $chk';
+    var url =
+        'https://timkecilproject.com/pengmas/public/api/jawaban_kebahagiaans';
+    var data = {
+      "id_tugas": idTugas.toString(),
+      "id_pengguna": idUser.toString(),
+      "jawaban": jwb
+    };
+    var response = await http.post(url, body: data);
+    if (response.statusCode == 200) {
+      context.bloc<PageBloc>().add(GoToInti3Page());
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text("Error saat mengirim jawaban"),
+            actions: <Widget>[
+              FlatButton(
+                child: new Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
+  final List<SimpleModel> _items = <SimpleModel>[
+    SimpleModel(
+        '1. Mengantar anak ke Rumah sakit karena pendarahan di kepala yang tidak berhenti',
+        false),
+    SimpleModel(
+        '2. Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya',
+        false),
+    SimpleModel(
+        '3. Menyiapkan materi ujian/tugas yang harus dikumpulkan besok', false),
+    SimpleModel('4. Bersih-bersih rumah.', false),
+    SimpleModel('5. Bersih-bersih rumah.', false),
+    SimpleModel(
+        '6. Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
+    SimpleModel('7. Menjawab telepon dari nomor yang tidak dikenal.', false),
+    SimpleModel('8. Menyediakan kue untuk arisan/acara keluarga.', false),
+    SimpleModel('9. Belanja kudapan untuk keluarga.', false),
+    SimpleModel('10. Bermain games di HP.', false),
+    SimpleModel('11. Menonton gossip di TV.', false),
+    SimpleModel('12. Melihat-lihat online shop.', false),
   ];
 
   @override
@@ -70,16 +135,8 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
-                Text("Kamu memilih untuk :"),
                 SizedBox(
                   height: 10,
-                ),
-                Center(
-                  child: Text(
-                    _selectedValue == null ? "Belum memilih" : _selectedValue,
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                  ),
                 ),
                 SizedBox(
                   height: 20,
@@ -99,7 +156,7 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
                         style: whiteTextFont.copyWith(fontSize: 16),
                       ),
                       onPressed: () {
-                        context.bloc<PageBloc>().add(GoToInti3Page());
+                        postKebahagiaan();
                       }),
                 )),
               ],
@@ -114,20 +171,22 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
   Widget _buildRadioButton() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: _programmingList
-          .map((programming) => RadioListTile(
-                title: Text(programming.text),
-                value: programming.index,
-                groupValue: _rgProgramming,
-                controlAffinity: ListTileControlAffinity.trailing,
-                dense: true,
-                onChanged: (value) {
+      children: _items
+          .map(
+            (SimpleModel item) => CheckboxListTile(
+                title: Text(item.title),
+                value: item.isChecked,
+                onChanged: (bool val) {
                   setState(() {
-                    _rgProgramming = value;
-                    _selectedValue = programming.text;
+                    item.isChecked = val;
+                    if (item.isChecked == true) {
+                      _hasilCheck.add(item.title);
+                    } else {
+                      _hasilCheck.remove(item.title);
+                    }
                   });
-                },
-              ))
+                }),
+          )
           .toList(),
     );
   }
