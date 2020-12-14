@@ -6,7 +6,7 @@ class SuaraPageOne extends StatefulWidget {
 }
 
 class _SuaraPageOneState extends State<SuaraPageOne> {
-  bool viewVisible1 = false;
+  bool viewVisible1 = true;
   TextEditingController controller = TextEditingController();
   String namaTugas;
   bool isDone = false;
@@ -209,7 +209,7 @@ class _SuaraPageOneState extends State<SuaraPageOne> {
                               child: GestureDetector(
                             onTap: hideWidget,
                             child: Text(
-                                'Apa yang Anda pikirkan ketika teman Anda menceritakan pengalaman seperti itu kepada Anda?',
+                                'Tuliskan apa yang Anda pikirkan ketika membaca pengalaman teman Anda.',
                                 textAlign: TextAlign.left,
                                 style: blackTextFont.copyWith(fontSize: 20)),
                           )))),
@@ -237,7 +237,7 @@ class _SuaraPageOneState extends State<SuaraPageOne> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'Saya memikirkan tentang...',
+                                  hintText: 'Tuliskan pikiran Anda di sini.',
                                 ),
                                 controller: controller,
                                 //maxLength: 200,
@@ -261,7 +261,7 @@ class _SuaraPageOneState extends State<SuaraPageOne> {
                 height: 50,
                 margin: EdgeInsets.only(left: 50, right: 50),
                 child: RaisedButton(
-                  child: Text('Selesai',
+                  child: Text('Lanjut',
                       style: whiteTextFont.copyWith(
                           fontSize: 18, fontWeight: FontWeight.w400)),
                   color: mainColor,

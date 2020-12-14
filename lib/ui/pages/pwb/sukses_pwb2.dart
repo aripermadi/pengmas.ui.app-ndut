@@ -27,7 +27,7 @@ class SuccessPWB2Page extends StatelessWidget {
           padding: const EdgeInsets.only(
               top: 10, left: defaultMargin, right: defaultMargin),
           child: Text(
-              "Anda menyelesaikan tantangan ini./nTetap semangat terus ya!",
+              "Anda menyelesaikan tantangan ini.\nTetap semangat terus ya!",
               textAlign: TextAlign.center,
               style: blackTextFont.copyWith(fontSize: 16)),
         ),

@@ -19,7 +19,7 @@ var categoriesData = [
     "id": 1,
     "name": "Mindfulness",
     'courses': 8,
-    'image': "assets/images/newpack/10-SCENE.png"
+    'image': "assets/images/newpack/yoga.png"
   },
   {
     "id": 2,

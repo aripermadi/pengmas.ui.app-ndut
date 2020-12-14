@@ -96,10 +96,29 @@ class _TaskMindfullPageState extends State<TaskMindfullPage> {
                         Container(
                           height: MediaQuery.of(context).size.height,
                           decoration: BoxDecoration(
+
                               // borderRadius: BorderRadius.all(Radius.circular(20)),
                               image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/taskmindfull.jpeg"),
+                                  image: id == 1
+                                      ? AssetImage(
+                                          "assets/images/mindfullnes/sadarketikamakan.jpg")
+                                      : id == 2
+                                          ? AssetImage(
+                                              "assets/images/mindfullnes/mengamatitubuh.jpg")
+                                          : id == 3
+                                              ? AssetImage(
+                                                  "assets/images/mindfullnes/prespektifyangbaru.jpg")
+                                              : id == 4
+                                                  ? AssetImage(
+                                                      "assets/images/mindfullnes/kalenderstress.jpg")
+                                                  : id == 5
+                                                      ? AssetImage(
+                                                          "assets/images/mindfullnes/suarateman.jpg")
+                                                      : id == 6
+                                                          ? AssetImage(
+                                                              "assets/images/mindfullnes/ungkapansyukur.jpg")
+                                                          : AssetImage(
+                                                              "assets/images/taskmindfull.jpeg"),
                                   fit: BoxFit.cover)),
                         ),
                         Container(

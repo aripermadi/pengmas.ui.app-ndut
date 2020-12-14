@@ -174,7 +174,7 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                   padding: const EdgeInsets.fromLTRB(
                       defaultMargin, 0, defaultMargin, 0),
                   child: Card(
-                    color: isDone != true ? Colors.yellow : Colors.red,
+                    color: isDone != true ? Colors.yellow : Colors.green,
                     child: ListTile(
                       trailing: Icon(MdiIcons.arrowRightDropCircle),
                       title: Text(tugas[pos].nama, style: blackTextFont),
