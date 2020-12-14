@@ -180,6 +180,18 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                       title: Text(tugas[pos].nama, style: blackTextFont),
                       /*subtitle: Text(tugas[pos].createdAt),*/
                       onTap: () {
+                        isDone == true
+                            ? showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return CupertinoAlertDialog(
+                                    title: Text("Tugas Sudah Dikerjakan"),
+                                    //content: Text("Tugas Sudah Dikerjakan"),
+                                  );
+                                },
+                                barrierDismissible: true,
+                              )
+                            : isDone == false;
                         saveTugas(tugas[pos].id, tugas[pos].nama);
                         context.bloc<PageBloc>().add(GoToStudyCasePage());
                         /*

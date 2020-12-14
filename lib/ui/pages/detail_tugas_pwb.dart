@@ -175,6 +175,18 @@ class _DetailTugasPwbState extends State<DetailTugasPwb> {
                       title: Text(tugas[pos].nama, style: blackTextFont),
                       /*subtitle: Text(tugas[pos].createdAt),*/
                       onTap: () {
+                        isDone == true
+                            ? showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return CupertinoAlertDialog(
+                                    title: Text("Tugas Sudah Dikerjakan"),
+                                    //content: Text("Tugas Sudah Dikerjakan"),
+                                  );
+                                },
+                                barrierDismissible: true,
+                              )
+                            : isDone == false;
                         print(tugas[pos].id);
                         /*context
                         .bloc<PageBloc>()
@@ -197,8 +209,6 @@ class _DetailTugasPwbState extends State<DetailTugasPwb> {
                           context.bloc<PageBloc>().add(GoToTantangan5Page());
                         } else if (tugas[pos].id == 6) {
                           context.bloc<PageBloc>().add(GoToTugas6Page());
-                          /*} else if (tugas[pos].id == 6) {
-                      context.bloc<PageBloc>().add(GoToSyukurPage());*/
                         }
                       },
                     ),
