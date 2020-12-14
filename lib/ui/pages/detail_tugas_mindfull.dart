@@ -74,7 +74,7 @@ class _DetailTugasMindfullState extends State<DetailTugasMindfull> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         ),
                         SizedBox(height: 30),
-                        Text("Mindfullness", style: kHeadingextStyle),
+                        Text("Mindfulness", style: kHeadingextStyle),
                       ],
                     ),
                   ),
