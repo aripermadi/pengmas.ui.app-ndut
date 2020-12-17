@@ -75,6 +75,15 @@ class _PlayListState extends State<PlayList> {
                 height: 50,
                 child: Stack(
                   children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                        },
+                        child: Icon(Icons.arrow_back),
+                      ),
+                    ),
                     // Align(
                     //   alignment: Alignment.centerLeft,
                     //   child: GestureDetector(

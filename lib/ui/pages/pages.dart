@@ -75,6 +75,7 @@ part 'komunikasi/komunikasi.dart';
 part 'komunikasi/sukses.dart';
 part 'komunikasi/taskkomunikasi.dart';
 part 'komunikasi/study_case.dart';
+part 'komunikasi/tugas5.dart';
 part 'pwb/choices_quiz.dart';
 part 'pwb/choices_quiz1.dart';
 part 'pwb/choices_quiz2.dart';

@@ -17,7 +17,7 @@ class SuccessPWBPage extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 10),
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/images/selamat.png"))),
+                  image: AssetImage("assets/images/suksespwb.png"))),
         ),
         Align(
           child: Text(

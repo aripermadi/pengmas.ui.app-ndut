@@ -24,6 +24,15 @@ class _Tugas6PageState extends State<Tugas6Page> {
         child: Scaffold(
             body: Stack(
           children: <Widget>[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: GestureDetector(
+                onTap: () {
+                  context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                },
+                child: Icon(Icons.arrow_back),
+              ),
+            ),
             Container(color: accentColor4),
             SafeArea(
               child: Container(
@@ -116,8 +125,7 @@ class _Tugas6PageState extends State<Tugas6Page> {
                               Colors.black.withOpacity(0)
                             ]),
                         image: DecorationImage(
-                          image: NetworkImage(
-                              'https://images.unsplash.com/photo-1578242174372-e26b3681587f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+                          image: AssetImage('assets/images/pwb/pendek.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -162,8 +170,7 @@ class _Tugas6PageState extends State<Tugas6Page> {
                               Colors.black.withOpacity(0)
                             ]),
                         image: DecorationImage(
-                          image: NetworkImage(
-                              'https://images.unsplash.com/photo-1523735961257-ea378102c288?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+                          image: AssetImage('assets/images/pwb/menengah.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -208,8 +215,7 @@ class _Tugas6PageState extends State<Tugas6Page> {
                               Colors.black.withOpacity(0)
                             ]),
                         image: DecorationImage(
-                          image: NetworkImage(
-                              'https://images.unsplash.com/photo-1591305097470-0fad344325aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+                          image: AssetImage('assets/images/pwb/panjang.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),

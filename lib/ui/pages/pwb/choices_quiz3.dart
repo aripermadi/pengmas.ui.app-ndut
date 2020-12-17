@@ -64,31 +64,30 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
 
   final List<SimpleModel> _items = <SimpleModel>[
     SimpleModel(
-        '1. Menyiapkan materi ujian/tugas yang harus dikumpulkan besok. ',
+        'Menyiapkan materi ujian/tugas yang harus dikumpulkan besok. ', false),
+    SimpleModel(
+        'Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
+    SimpleModel('Belanja kudapan untuk keluarga.', false),
+    SimpleModel('Melihat-lihat online shop.', false),
+    SimpleModel('Menonton gossip di TV.', false),
+    SimpleModel('Menyediakan kue untuk arisan/acara keluarga.', false),
+    SimpleModel('Olahraga.', false),
+    SimpleModel(
+        'Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya.',
         false),
     SimpleModel(
-        '2. Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
-    SimpleModel('3. Belanja kudapan untuk keluarga.', false),
-    SimpleModel('4. Melihat-lihat online shop.', false),
-    SimpleModel('5. Menonton gossip di TV.', false),
-    SimpleModel('6. Menyediakan kue untuk arisan/acara keluarga.', false),
-    SimpleModel('7. Olahraga.', false),
-    SimpleModel(
-        '8. Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya.',
+        'Mengantar anak ke Rumah Sakit karena pendarahan di kepala yang tidak berhenti.',
         false),
-    SimpleModel(
-        '9. Mengantar anak ke Rumah Sakit karena pendarahan di kepala yang tidak berhenti.',
-        false),
-    SimpleModel('10. Bersih-bersih rumah.', false),
-    SimpleModel('11. Menjawab telepon dari nomor yang tidak dikenal.', false),
-    SimpleModel('12. Bermain games di HP.', false),
+    SimpleModel('Bersih-bersih rumah.', false),
+    SimpleModel('Menjawab telepon dari nomor yang tidak dikenal.', false),
+    SimpleModel('Bermain games di HP.', false),
   ];
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        context.bloc<PageBloc>().add(GoToMainPage());
+        context.bloc<PageBloc>().add(GoToChoices2Page());
         return;
       },
       child: Scaffold(
@@ -109,7 +108,7 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
                       onTap: () {
-                        context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                        context.bloc<PageBloc>().add(GoToChoices2Page());
                       },
                       child: Icon(Icons.arrow_back),
                     ),
@@ -131,8 +130,7 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text("Kuadran IV  "),
-                Text(
-                    "Sangat penting dan sangat mendesak(lakukan segera sendiri)"),
+                Text("tidak penting dan tidak mendesak(tinggalkan)"),
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
@@ -188,7 +186,8 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
                   });
                 }),
           )
-          .toList(),
+          .toList()
+            ..shuffle(),
     );
   }
 }

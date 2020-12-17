@@ -113,6 +113,15 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
           color: Color(0xFFF6F7F9),
         )),
         ListView(children: <Widget>[
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+              },
+              child: Icon(Icons.arrow_back),
+            ),
+          ),
           Column(
             children: <Widget>[
               SizedBox(height: 50),

@@ -172,10 +172,8 @@ class _QuestAnswerUPageState extends State<QuestAnswerUPage> {
                                 child: TextField(
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    // hintText: 'Ceritakan pengalamanmu disini',
                                   ),
                                   controller: controller,
-                                  //maxLength: 200,
                                 ),
                               ),
                               Padding(
@@ -191,38 +189,6 @@ class _QuestAnswerUPageState extends State<QuestAnswerUPage> {
                     ),
                   ),
                 ),
-
-                // Container(
-                //   child: Align(
-                //     child: Material(
-                //       color: Colors.white,
-                //       borderRadius: BorderRadius.circular(20.0),
-                //       child: Container(
-                //         height: 250,
-                //         width: (MediaQuery.of(context).size.width -
-                //             2 * defaultMargin -
-                //             24),
-                //         child: Column(
-                //           children: <Widget>[
-                //             Align(
-                //                 child: Text(
-                //               'Preview Jawaban',
-                //               style: blackTextFont.copyWith(fontSize: 14),
-                //               textAlign: TextAlign.left,
-                //             )),
-                //             Padding(
-                //                 padding: const EdgeInsets.fromLTRB(
-                //                     10, defaultMargin, 10, defaultMargin),
-                //                 child: Text(
-                //                   controller.text,
-                //                   style: kTitleTextStyle,
-                //                 )),
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 SizedBox(height: 15),
                 Visibility(
                   visible: visible,
@@ -244,7 +210,6 @@ class _QuestAnswerUPageState extends State<QuestAnswerUPage> {
                         borderRadius: BorderRadius.circular(25)),
                     onPressed: () {
                       postKebahagiaan();
-                      //context.bloc<PageBloc>().add(GoToInti2Page());
                     },
                   ),
                 ),

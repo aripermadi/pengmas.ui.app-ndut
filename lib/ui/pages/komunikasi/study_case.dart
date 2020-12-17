@@ -173,7 +173,7 @@ class _StudyCaseState extends State<StudyCase> {
                                     margin: EdgeInsets.fromLTRB(
                                         defaultMargin, 25, defaultMargin, 25),
                                     decoration: BoxDecoration(
-                                      color: Colors.lightBlueAccent,
+                                      color: Colors.blue[100],
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(20)),
                                     ),
@@ -182,7 +182,7 @@ class _StudyCaseState extends State<StudyCase> {
                                       child: SingleChildScrollView(
                                         child: Text(kasus[index]["kasus"],
                                             textAlign: TextAlign.justify,
-                                            style: whiteTextFont.copyWith(
+                                            style: blackTextFont.copyWith(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400)),
                                       ),
@@ -209,7 +209,13 @@ class _StudyCaseState extends State<StudyCase> {
                                                 onChanged: (bool value) {
                                                   setState(() {
                                                     if (_checked[index] ==
-                                                        false) {
+                                                            false &&
+                                                        _checked
+                                                                .where((item) =>
+                                                                    item ==
+                                                                    true)
+                                                                .length <
+                                                            1) {
                                                       _checked[index] = true;
                                                       jawaban = pilihan[index]
                                                           ["pilihan"];
@@ -294,11 +300,10 @@ class _StudyCaseState extends State<StudyCase> {
                                         child: TextField(
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
-                                            hintText:
-                                                'Tulis jawabannya disini...',
+                                            hintText: '',
                                           ),
                                           controller: controller,
-                                          maxLength: 200,
+                                          //maxLength: 200,
                                         ),
                                       ),
                                       Padding(

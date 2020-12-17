@@ -1,6 +1,6 @@
 part of '../pages.dart';
 
-class SuksesPage extends StatelessWidget {
+class SukseskomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class SuksesPage extends StatelessWidget {
               padding: const EdgeInsets.only(
                   top: 10, left: defaultMargin, right: defaultMargin),
               child: Text(
-                  "Anda berhasil menyelesaikan misi pertama! Anda maju selangkah menuju orang tua yang hebat!",
+                  "Hore! Anda berhasil menyelesaikan misi! \nAnda maju selangkah menuju orang tua yang hebat!",
                   textAlign: TextAlign.center,
                   style: blackTextFont.copyWith(fontSize: 16)),
             ),

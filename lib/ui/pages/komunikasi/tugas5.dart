@@ -1,13 +1,13 @@
 part of '../pages.dart';
 
-class ChoicesQuiz extends StatefulWidget {
+class Tugas5kom extends StatefulWidget {
   Category category;
 
   @override
-  _ChoicesQuizState createState() => _ChoicesQuizState();
+  _Tugas5komState createState() => _Tugas5komState();
 }
 
-class _ChoicesQuizState extends State<ChoicesQuiz> {
+class _Tugas5komState extends State<Tugas5kom> {
   List<String> _hasilCheck = [];
   int idTugas;
   int idUser;
@@ -61,24 +61,9 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
   }
 
   final List<SimpleModel> _items = <SimpleModel>[
-    SimpleModel(
-        'Menyiapkan materi ujian/tugas yang harus dikumpulkan besok. ', false),
-    SimpleModel(
-        'Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
-    SimpleModel('Belanja kudapan untuk keluarga.', false),
-    SimpleModel('Melihat-lihat online shop.', false),
-    SimpleModel('Menonton gossip di TV.', false),
-    SimpleModel('Menyediakan kue untuk arisan/acara keluarga.', false),
-    SimpleModel('Olahraga.', false),
-    SimpleModel(
-        'Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya.',
-        false),
-    SimpleModel(
-        'Mengantar anak ke Rumah Sakit karena pendarahan di kepala yang tidak berhenti.',
-        false),
-    SimpleModel('Bersih-bersih rumah.', false),
-    SimpleModel('Menjawab telepon dari nomor yang tidak dikenal.', false),
-    SimpleModel('Bermain games di HP.', false),
+    SimpleModel('Pemimpin', false),
+    SimpleModel('Teman', false),
+    SimpleModel('Kakak', false),
   ];
 
   @override
@@ -113,7 +98,7 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
                   ),
                   Center(
                     child: Text(
-                      'Pilih 3 pilihan dari 12 pilihan\n',
+                      'Pilih 3 pilihan dari 12 pilihan',
                       textAlign: TextAlign.center,
                       style: blackTextFont.copyWith(fontSize: 20),
                     ),
@@ -191,8 +176,8 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
   }
 }
 
-class SimpleModel {
+class SimpleModelKom {
   String title;
   bool isChecked;
-  SimpleModel(this.title, this.isChecked);
+  SimpleModelKom(this.title, this.isChecked);
 }

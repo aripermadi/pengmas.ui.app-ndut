@@ -50,13 +50,13 @@ class _KomunikasiPageState extends State<KomunikasiPage> {
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
       setDone(namaTugas);
-      context.bloc<PageBloc>().add(GoToSuksesPage());
+      context.bloc<PageBloc>().add(GoToSuksesKomPage());
     } else {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: new Text("Error saat mengirim jawaban"),
+            title: new Text("Isikan dahulu jawaban anda"),
             actions: <Widget>[
               FlatButton(
                 child: new Text("OK"),
