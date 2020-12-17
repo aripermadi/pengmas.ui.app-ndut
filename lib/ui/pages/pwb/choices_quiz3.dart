@@ -64,23 +64,24 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
 
   final List<SimpleModel> _items = <SimpleModel>[
     SimpleModel(
-        'Menyiapkan materi ujian/tugas yang harus dikumpulkan besok. ', false),
-    SimpleModel(
-        'Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
-    SimpleModel('Belanja kudapan untuk keluarga.', false),
-    SimpleModel('Melihat-lihat online shop.', false),
-    SimpleModel('Menonton gossip di TV.', false),
-    SimpleModel('Menyediakan kue untuk arisan/acara keluarga.', false),
-    SimpleModel('Olahraga.', false),
-    SimpleModel(
-        'Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya.',
+        '1.Menyiapkan materi ujian/tugas yang harus dikumpulkan besok. ',
         false),
     SimpleModel(
-        'Mengantar anak ke Rumah Sakit karena pendarahan di kepala yang tidak berhenti.',
+        '2.Melakukan hobi/kegiatan menyenangkan bersama keluarga.', false),
+    SimpleModel('3.Belanja kudapan untuk keluarga.', false),
+    SimpleModel('4.Melihat-lihat online shop.', false),
+    SimpleModel('5.Menonton gossip di TV.', false),
+    SimpleModel('6.Menyediakan kue untuk arisan/acara keluarga.', false),
+    SimpleModel('7.Olahraga.', false),
+    SimpleModel(
+        '8.Membuat laporan kerja untuk di presentasikan di rapat keesokan harinya.',
         false),
-    SimpleModel('Bersih-bersih rumah.', false),
-    SimpleModel('Menjawab telepon dari nomor yang tidak dikenal.', false),
-    SimpleModel('Bermain games di HP.', false),
+    SimpleModel(
+        '9.Mengantar anak ke Rumah Sakit karena pendarahan di kepala yang tidak berhenti.',
+        false),
+    SimpleModel('10.Bersih-bersih rumah.', false),
+    SimpleModel('11.Menjawab telepon dari nomor yang tidak dikenal.', false),
+    SimpleModel('12.Bermain games di HP.', false),
   ];
 
   @override
@@ -186,8 +187,7 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
                   });
                 }),
           )
-          .toList()
-            ..shuffle(),
+          .toList(),
     );
   }
 }
