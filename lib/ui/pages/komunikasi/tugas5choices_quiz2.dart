@@ -28,7 +28,7 @@ class _Tugas5ChoicesQuiz2KomState extends State<Tugas5ChoicesQuiz2Kom> {
 
   void postPilihan() async {
     String temp =
-        "Anak perempuan bu Marsi yang saat ini memasuki remaja, menceritakan masalah tentang teman laki-laki yang  sukamenjahili dirinya kepada ibunya. Ibunya mengatakan, Masa kamu diganggu laki-laki aja ga bisa balas. Anak mama harus kuat, jangan dikit-dikit ngadu kalau masalah seperti ini. Dulu, kalau ada yang berani ganggu Mama, Mama cuekin, masa kamu ga bisa?";
+        "Anda melihat anak anda sedang mengerjakan PR dan ia terlihat kesulitan. Saat itu, anda memposisikan diri anda sebaiknya sebagai ";
     jawaban = "Pertanyaan  :  $temp       Jawaban  :  $_selectedValue";
     var url =
         'https://timkecilproject.com/pengmas/public/api/jawaban_komunikasis';
@@ -40,7 +40,7 @@ class _Tugas5ChoicesQuiz2KomState extends State<Tugas5ChoicesQuiz2Kom> {
     };
     var response = await http.post(url, body: data);
     if (response.statusCode == 200) {
-      context.bloc<PageBloc>().add(GoToSuksesKomPage());
+      context.bloc<PageBloc>().add(GoToTugas5ChoicesQuiz3KomPage());
       /*Navigator.push(context, MaterialPageRoute(
         builder: (context) {
           return ChoicesQuiz3Kom();
@@ -136,7 +136,8 @@ class _Tugas5ChoicesQuiz2KomState extends State<Tugas5ChoicesQuiz2Kom> {
                 ),
                 SizedBox(height: 10),
                 Center(
-                  child: Text("Anda memposisikan diri sebagai :",
+                  child: Text(
+                      "Anda melihat anak anda sedang mengerjakan PR dan ia terlihat kesulitan. Saat itu, anda memposisikan diri anda sebaiknya sebagai...",
                       style: blackTextFont.copyWith(fontSize: 16),
                       textAlign: TextAlign.center),
                 ),

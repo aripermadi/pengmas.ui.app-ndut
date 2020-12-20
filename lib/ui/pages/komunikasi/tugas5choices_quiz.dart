@@ -28,7 +28,7 @@ class _Tugas5ChoicesQuizKomState extends State<Tugas5ChoicesQuizKom> {
 
   void postPilihan() async {
     String temp =
-        "Anak tidak berhasil mendapatkan peringkat 10 besar, namun anak berhasil mendapatkan nilai sebagai anak yang bersikap paling sopan. Anak membanggakan hal tersebut kepada ibunya,namun ibunya mengatakan bahwa nilai akademik menjadi prioritas dan jangan membuang-buang waktu untuk memikirkan hal yang lain sebelum masuk peringkat 10 besar.";
+        "Anak sedang menonton bola (jika laki-laki) atau bermain boneka (jika perempuan) di waktu liburnya. Anda duduk disamping anak Anda. Anda memposisikan diri anda saat itu sebagai ";
     jawaban = "Pertanyaan  :  $temp       Jawaban  :  $_selectedValue";
     var url =
         'https://timkecilproject.com/pengmas/public/api/jawaban_komunikasis';
@@ -128,19 +128,21 @@ class _Tugas5ChoicesQuizKomState extends State<Tugas5ChoicesQuizKom> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Center(
-                  child: Text("anak menonton bola",
+                  child: Text("Kasus menonton bola",
                       style: blackTextFont.copyWith(fontSize: 16),
                       textAlign: TextAlign.center),
                 ),
                 SizedBox(height: 10),
                 Center(
-                  child: Text("Anda memposisikan diri sebagai :",
-                      style: blackTextFont, textAlign: TextAlign.center),
+                  child: Text(
+                      "Anak sedang menonton bola (jika laki-laki) atau bermain boneka (jika perempuan) di waktu liburnya. Anda duduk disamping anak Anda. Anda memposisikan diri anda saat itu sebagai....",
+                      style: blackTextFont,
+                      textAlign: TextAlign.center),
                 ),
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
-                Text("Anda memposisikan diri sebagai :"),
+                Text("Pilihan Kamu :"),
                 SizedBox(
                   height: 10,
                 ),

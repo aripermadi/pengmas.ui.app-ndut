@@ -30,7 +30,7 @@ class _Tugas5ChoicesQuiz3KomState extends State<Tugas5ChoicesQuiz3Kom> {
 
   void postPilihan() async {
     String temp =
-        "Anak laki-laki Bu Susi sedang bermain di luar bersama anak tetangga, kemudian selang beberapa menit, terdengar ada suara tangisan dan ternyata anak laki-laki bu Susi bertengkar dengan anak tetangga tersebut. Baik Bu Susi maupun orang tua dari anak tetangga berhasil melerai dan memisahkan mereka berdua. Bu Susi mengajak anaknya untuk berdiskusi tentang apa yang terjadi, dan mendengarkan cerita si anak sampai selesai.";
+        "Anda menyuruh anak anda untuk pulang sampai rumah pukul 6 sore, tapi anak anda baru pulang pukul 7 malam. Saat itu, anda memposisikan diri anda sebaiknya sebagai ";
     jawaban = "Pertanyaan  :  $temp       Jawaban  :  $_selectedValue";
     var url =
         'https://timkecilproject.com/pengmas/public/api/jawaban_komunikasis';
@@ -127,19 +127,21 @@ class _Tugas5ChoicesQuiz3KomState extends State<Tugas5ChoicesQuiz3Kom> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                    "Anak laki-laki Bu Susi sedang bermain di luar bersama anak tetangga, kemudian selang beberapa menit, terdengar ada suara tangisan dan ternyata anak laki-laki bu Susi bertengkar dengan anak tetangga tersebut. ",
-                    style: blackTextFont,
-                    textAlign: TextAlign.justify),
+                Center(
+                  child: Text("Anak bermain hingga larut malam ",
+                      style: blackTextFont, textAlign: TextAlign.justify),
+                ),
                 SizedBox(height: 10),
-                Text(
-                    "Baik Bu Susi maupun orang tua dari anak tetangga berhasil melerai dan memisahkan mereka berdua. Bu Susi mengajak anaknya untuk berdiskusi tentang apa yang terjadi, dan mendengarkan cerita si anak sampai selesai.",
-                    style: blackTextFont,
-                    textAlign: TextAlign.justify),
+                Center(
+                  child: Text(
+                      "Anda menyuruh anak anda untuk pulang sampai rumah pukul 6 sore, tapi anak anda baru pulang pukul 7 malam. Saat itu, anda memposisikan diri anda sebaiknya sebagai...",
+                      style: blackTextFont,
+                      textAlign: TextAlign.justify),
+                ),
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),
-                Text("Jawaban kamu :"),
+                Text("Pilihan kamu :"),
                 SizedBox(
                   height: 10,
                 ),
