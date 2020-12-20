@@ -193,7 +193,11 @@ class _DetailTugasKomunikasiState extends State<DetailTugasKomunikasi> {
                               )
                             : isDone == false;
                         saveTugas(tugas[pos].id, tugas[pos].nama);
-                        context.bloc<PageBloc>().add(GoToStudyCasePage());
+                        if (tugas[pos].id == 6) {
+                          context.bloc<PageBloc>().add(GoToChoicesKomPage());
+                        } else {
+                          context.bloc<PageBloc>().add(GoToStudyCasePage());
+                        }
                         /*
                     if (tugas[pos].id == 1 ||
                         tugas[pos].id == 3 ||
