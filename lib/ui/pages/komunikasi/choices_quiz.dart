@@ -79,7 +79,7 @@ class _ChoicesQuizKomState extends State<ChoicesQuizKom> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        //context.bloc<PageBloc>().add(GoToDetailMateriPage());
+        context.bloc<PageBloc>().add(GoToChoicesKomPage());
 
         return;
       },
@@ -101,11 +101,12 @@ class _ChoicesQuizKomState extends State<ChoicesQuizKom> {
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
+                        context.bloc<PageBloc>().add(GoToChoicesKomPage());
+                        /*Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
                             return ChoicesKom();
                           },
-                        ));
+                        ));*/
                       },
                       child: Icon(Icons.arrow_back),
                     ),

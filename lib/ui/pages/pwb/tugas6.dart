@@ -113,18 +113,25 @@ class _InputTujuanPageState extends State<InputTujuanPage> {
           color: Color(0xFFF6F7F9),
         )),
         ListView(children: <Widget>[
-          Align(
-            alignment: Alignment.centerLeft,
-            child: GestureDetector(
-              onTap: () {
-                context.bloc<PageBloc>().add(GoToDetailTugasPwb());
-              },
-              child: Icon(Icons.arrow_back),
-            ),
-          ),
           Column(
             children: <Widget>[
-              SizedBox(height: 50),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 10),
+                height: 10,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.bloc<PageBloc>().add(GoToTugas6Page());
+                        },
+                        child: Icon(Icons.arrow_back),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Center(
                 child: Text(
                   'Rancangan hidup anda pada \n $tgs6',

@@ -42,7 +42,7 @@ class _DetailTugasMindfullState extends State<DetailTugasMindfull> {
               decoration: BoxDecoration(
                 color: Color(0xFFF6F7F9),
                 image: DecorationImage(
-                  image: AssetImage("assets/images/newpack/10-SCENE.png"),
+                  image: AssetImage("assets/images/newpack/yoga.png"),
                   alignment: Alignment.topRight,
                 ),
               ),

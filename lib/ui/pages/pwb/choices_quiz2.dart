@@ -105,6 +105,9 @@ class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
               height: 50,
               child: Stack(
                 children: <Widget>[
+                  SizedBox(
+                    height: 20,
+                  ),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
@@ -130,8 +133,18 @@ class _ChoicesQuiz2State extends State<ChoicesQuiz2> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Kuadran III"),
-                Text("tidak Sangat penting sangat mendesak(delegasikan)"),
+                Center(
+                  child: Text(
+                    "Kuadran III",
+                    style: blackTextFont.copyWith(fontSize: 20),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    "Kegiatan yang penting tapi mendesak",
+                    style: blackTextFont.copyWith(fontSize: 20),
+                  ),
+                ),
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),

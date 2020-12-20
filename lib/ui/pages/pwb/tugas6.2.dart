@@ -63,11 +63,11 @@ class _Tugas6PageState extends State<Tugas6Page> {
                   ),
                   SizedBox(height: 20),
                   Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.center,
                     child: Padding(
                       padding: const EdgeInsets.only(left: defaultMargin),
                       child: Text('Tantangan',
-                          textAlign: TextAlign.left,
+                          textAlign: TextAlign.center,
                           style: blackTextFont.copyWith(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                     ),

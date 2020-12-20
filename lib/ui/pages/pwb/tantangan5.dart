@@ -136,7 +136,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '1.',
+                                  //hintText: '1.',
                                 ),
                                 controller: jwb1,
                               ),
@@ -176,7 +176,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '2.',
+                                  //hintText: '2.',
                                 ),
                                 controller: jwb2,
                               ),
@@ -216,7 +216,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '3.',
+                                  //hintText: '3.',
                                 ),
                                 controller: jwb3,
                               ),
@@ -256,7 +256,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '4.',
+                                  //hintText: '4.',
                                 ),
                                 controller: jwb4,
                               ),
@@ -296,7 +296,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '5.',
+                                  //hintText: '5.',
                                 ),
                                 controller: jwb5,
                               ),
@@ -352,7 +352,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '1.',
+                                  //hintText: '1.',
                                 ),
                                 controller: jwb6,
                               ),
@@ -392,7 +392,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '2.',
+                                  //hintText: '2.',
                                 ),
                                 controller: jwb7,
                               ),
@@ -432,7 +432,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '3.',
+                                  //hintText: '3.',
                                 ),
                                 controller: jwb8,
                               ),
@@ -472,7 +472,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '4..',
+                                  //hintText: '4..',
                                 ),
                                 controller: jwb9,
                               ),
@@ -512,7 +512,7 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
                               child: TextField(
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: '5.',
+                                  //hintText: '5.',
                                 ),
                                 controller: jwb10,
                               ),

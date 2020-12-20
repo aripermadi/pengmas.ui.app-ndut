@@ -80,7 +80,7 @@ class _Tugas5ChoicesQuizKomState extends State<Tugas5ChoicesQuizKom> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        //context.bloc<PageBloc>().add(GoToDetailMateriPage());
+        context.bloc<PageBloc>().add(GoToTugas5ChoicesKomPage());
 
         return;
       },
@@ -102,11 +102,14 @@ class _Tugas5ChoicesQuizKomState extends State<Tugas5ChoicesQuizKom> {
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
+                        context
+                            .bloc<PageBloc>()
+                            .add(GoToTugas5ChoicesKomPage());
+                        /*Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
                             return Tugas5ChoicesKom();
                           },
-                        ));
+                        ));*/
                       },
                       child: Icon(Icons.arrow_back),
                     ),

@@ -103,6 +103,9 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
               height: 50,
               child: Stack(
                 children: <Widget>[
+                  SizedBox(
+                    height: 20,
+                  ),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
@@ -111,6 +114,9 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
                       },
                       child: Icon(Icons.arrow_back),
                     ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
                   Center(
                     child: Text(
@@ -124,13 +130,22 @@ class _ChoicesQuizState extends State<ChoicesQuiz> {
             ),
           ]),
           Container(
-            padding: EdgeInsets.all(18.0),
+            padding: EdgeInsets.all(10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Kuadran I"),
-                Text(
-                    "Sangat penting dan sangat mendesak(lakukan segera sendiri)"),
+                Center(
+                  child: Text(
+                    "Kuadran I",
+                    style: blackTextFont.copyWith(fontSize: 20),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    "Kegiatan yang penting dan mendesak",
+                    style: blackTextFont.copyWith(fontSize: 20),
+                  ),
+                ),
                 SizedBox(height: 25),
                 _buildRadioButton(),
                 SizedBox(height: 50),

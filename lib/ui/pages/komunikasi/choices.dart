@@ -4,7 +4,9 @@ class ChoicesKom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        onWillPop: () {},
+        onWillPop: () {
+          context.bloc<PageBloc>().add(GoToDetailTugasKomunikasi());
+        },
         child: Scaffold(
             body: Stack(children: <Widget>[
           Container(color: accentColor4),

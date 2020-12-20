@@ -77,11 +77,12 @@ class _ChoicesQuiz3KomState extends State<ChoicesQuiz3Kom> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Navigator.push(context, MaterialPageRoute(
+        context.bloc<PageBloc>().add(GoToChoicesQuiz2KomPage());
+        /*Navigator.push(context, MaterialPageRoute(
           builder: (context) {
             return ChoicesQuiz2Kom();
           },
-        ));
+        ));*/
       },
       child: Scaffold(
           body: Stack(children: <Widget>[
@@ -101,11 +102,13 @@ class _ChoicesQuiz3KomState extends State<ChoicesQuiz3Kom> {
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
                       onTap: () {
+                        context.bloc<PageBloc>().add(GoToChoicesQuiz2KomPage());
+                        /*
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
                             return ChoicesQuiz2Kom();
                           },
-                        ));
+                        ));*/
                       },
                       child: Icon(Icons.arrow_back),
                     ),
