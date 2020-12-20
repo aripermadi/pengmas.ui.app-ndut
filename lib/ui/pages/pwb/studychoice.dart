@@ -83,13 +83,21 @@ class _StudyChoicePageState extends State<StudyChoicePage> {
         ListView(children: <Widget>[
           Column(
             children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    context.bloc<PageBloc>().add(GoToDetailTugasPwb());
-                  },
-                  child: Icon(Icons.arrow_back),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 10),
+                height: 50,
+                child: Stack(
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                        },
+                        child: Icon(Icons.arrow_back),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(

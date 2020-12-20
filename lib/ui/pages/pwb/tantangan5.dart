@@ -96,6 +96,23 @@ class _Tantangan5PageState extends State<Tantangan5Page> {
           color: Color(0xFFF6F7F9),
         )),
         ListView(children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 20, left: 10),
+            height: 50,
+            child: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: GestureDetector(
+                    onTap: () {
+                      context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                    },
+                    child: Icon(Icons.arrow_back),
+                  ),
+                ),
+              ],
+            ),
+          ),
           Column(
             children: <Widget>[
               Container(

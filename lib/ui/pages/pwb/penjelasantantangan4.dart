@@ -17,6 +17,23 @@ class PenjelasanTantangan4Page extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 20, left: 10),
+              height: 50,
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        context.bloc<PageBloc>().add(GoToDetailTugasPwb());
+                      },
+                      child: Icon(Icons.arrow_back),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             /*Container(
           width: 300,
           height: 300,
