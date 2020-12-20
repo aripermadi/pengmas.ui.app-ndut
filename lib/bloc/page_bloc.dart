@@ -141,6 +141,14 @@ class PageBloc extends Bloc<PageEvent, PageState> {
       yield OnChoicesQuiz2KomPage();
     } else if (event is GoToChoicesQuiz3KomPage) {
       yield OnChoicesQuiz3KomPage();
+    } else if (event is GoToTugas5ChoicesKomPage) {
+      yield OnTugas5ChoicesKomPage();
+    } else if (event is GoToTugas5ChoicesQuizKomPage) {
+      yield OnTugas5ChoicesQuizKomPage();
+    } else if (event is GoToTugas5ChoicesQuiz2KomPage) {
+      yield OnTugas5ChoicesQuiz2KomPage();
+    } else if (event is GoToTugas5ChoicesQuiz3KomPage) {
+      yield OnTugas5ChoicesQuiz3KomPage();
     }
   }
 }

@@ -346,3 +346,23 @@ class OnChoicesQuiz3KomPage extends PageState {
   @override
   List<Object> get props => [];
 }
+
+class OnTugas5ChoicesKomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnTugas5ChoicesQuizKomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnTugas5ChoicesQuiz2KomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
+
+class OnTugas5ChoicesQuiz3KomPage extends PageState {
+  @override
+  List<Object> get props => [];
+}
