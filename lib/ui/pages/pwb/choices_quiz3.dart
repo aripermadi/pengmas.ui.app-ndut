@@ -31,7 +31,7 @@ class _ChoicesQuiz3State extends State<ChoicesQuiz3> {
 
   void postKebahagiaan() async {
     String chk = _hasilCheck.toString();
-    String jwb = 'Kuadran IV : $chk';
+    String jwb = 'Kegiatan yang tidak penting dan tidak mendesak : $chk';
     var url =
         'https://timkecilproject.com/pengmas/public/api/jawaban_kebahagiaans';
     var data = {

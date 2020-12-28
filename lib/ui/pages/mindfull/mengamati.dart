@@ -14,6 +14,35 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
   bool viewVisible6 = true;
   bool viewVisible7 = true;
   bool viewVisible8 = true;
+  AudioPlayer audioPlayer;
+  String durasi = "00:00:00";
+  MediaQueryData mediaQuery;
+  _MengamatiPageOneState() {
+    audioPlayer = AudioPlayer();
+    audioPlayer.onAudioPositionChanged.listen((duration) {
+      setState(() {
+        durasi = duration.toString();
+      });
+    });
+
+    audioPlayer.setReleaseMode(ReleaseMode.STOP);
+  }
+
+  void playSound(String url) async {
+    await audioPlayer.play(url);
+  }
+
+  void pauseSound() async {
+    await audioPlayer.pause();
+  }
+
+  void stopSound() async {
+    await audioPlayer.stop();
+  }
+
+  void resumeSound() async {
+    audioPlayer.resume();
+  }
 
   void showWidget1() {
     setState(() {
@@ -73,6 +102,7 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
+        stopSound();
         context.bloc<PageBloc>().add(GoToTaskMindfullPage());
 
         return;
@@ -95,17 +125,16 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
                     alignment: Alignment.centerLeft,
                     child: GestureDetector(
                       onTap: () {
+                        stopSound();
                         context.bloc<PageBloc>().add(GoToTaskMindfullPage());
                       },
                       child: Icon(Icons.arrow_back),
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      'Latihan:\nMengamati Tubuh',
-                      textAlign: TextAlign.center,
-                      style: blackTextFont.copyWith(fontSize: 20),
-                    ),
+                  Column(
+                    children: <Widget>[
+                      _buildWidgetControlMusicPlayer(),
+                    ],
                   ),
                 ],
               ),
@@ -113,6 +142,13 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
           ]),
           Column(
             children: <Widget>[
+              Center(
+                child: Text(
+                  'Latihan:\nMengamati Tubuh',
+                  textAlign: TextAlign.center,
+                  style: blackTextFont.copyWith(fontSize: 20),
+                ),
+              ),
               RaisedButton(
                 child: Text('Posisi yg nyaman'),
                 onPressed: showWidget1,
@@ -357,6 +393,7 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25)),
               onPressed: () {
+                stopSound();
                 context.bloc<PageBloc>().add(GoToRateEmojiPage());
               },
             ),
@@ -364,6 +401,50 @@ class _MengamatiPageOneState extends State<MengamatiPageOne> {
           SizedBox(height: 50),
         ])
       ])),
+    );
+  }
+
+  Widget _buildWidgetControlMusicPlayer() {
+    return Expanded(
+      child: Center(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+                child: GestureDetector(
+                    child: Icon(Icons.pause), onTap: pauseSound)),
+            Expanded(
+                child: GestureDetector(
+              child: Icon(Icons.play_arrow),
+              onTap: () {
+                playSound(
+                    "https://timkecilproject.com/pengmas/public/body_scan_plus_music.mp3");
+              },
+            )),
+            /*Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.grey.withOpacity(0.5),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: GestureDetector(
+                  child: Icon(Icons.play_arrow),
+                  onTap: () {
+                    playSound(
+                        "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3");
+                  },
+                ),
+              ),
+            ),*/
+            Expanded(
+              child: GestureDetector(child: Icon(Icons.stop), onTap: stopSound),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

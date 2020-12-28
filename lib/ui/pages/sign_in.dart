@@ -192,7 +192,7 @@ class _SignInPageState extends State<SignInPage> {
                     child: Container(
                         margin: EdgeInsets.only(bottom: 30),
                         child: CircularProgressIndicator())),
-                Padding(
+                /*Padding(
                   padding: const EdgeInsets.only(
                       left: defaultMargin, right: defaultMargin),
                   child: Row(
@@ -209,7 +209,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ],
                   ),
-                )
+                )*/
               ],
             ),
           ],
